@@ -7,6 +7,7 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
+/*                  GALLERY              */
 .gallery{
   display: flex;
   flex-direction: row;
@@ -60,6 +61,7 @@ justify-content: center;
 width: fit-content;
 height: 40px;
 }
+/*        FORM           */
 .form{
   margin-top: 36px;
   margin-bottom: 32px;
@@ -79,6 +81,9 @@ height: 40px;
 .form > button:hover {
       background: #6C8CFF;
     }
+
+
+/*           LOADER           */
     .loader {
       width: 64px;
       height: 64px;

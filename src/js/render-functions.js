@@ -1,11 +1,12 @@
 const gallery = document.querySelector('.gallery');
 
- const render = hits =>{
+const render = hits =>{
   gallery.innerHTML = "";
   const imgCollection = [];
 
     hits.forEach(image => {
         const {webformatURL, largeImageURL, tags, likes, views, comments, downloads} = image;
+        
         return  imgCollection.push( `<li class="gallery-item">
          <a class="gallery-link" href="${largeImageURL}">
            <img
