@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.min.css";
 import getImgs from'./js/pixabay-api'
-import render from './js/render-functions'
+import { render, lightbox } from './js/render-functions'
 import axios from 'axios';
 import errorIcon from '../src/img/error.png'; 
 import SimpleLightbox from "simplelightbox";
@@ -12,15 +12,16 @@ const searchText = document.querySelector('[name=search-text]');
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
-
+loader.classList.remove("loader");
 searchForm.addEventListener('submit', (evt)=>{
     evt.preventDefault();
     gallery.innerHTML =""; 
+    loader.classList.toggle("loader");
 
  
  //                 -- por si no han teclado request --
  if (searchText.value.trim().length === 0) {
-    loader.remove();
+    loader.classList.remove("loader");
     iziToast.show({
         title: 'Error',
         message: 'Please enter your request',
@@ -44,8 +45,8 @@ getImgs(searchText.value)
 // 
 
 .then(hits => { 
-    loader.remove();
-//               --revisamos si hemos encontrado por lo menos 1 con el request que ha echo user --
+    loader.classList.remove("loader");
+    //               --revisamos si hemos encontrado por lo menos 1 con el request que ha echo user --
     if (hits.length === 0) {
         iziToast.show({
         title: '😢',
@@ -72,7 +73,7 @@ getImgs(searchText.value)
 .catch(error => { 
         iziToast.show({
         title: '😢',
-        message: error,
+        message: error.message,
         color: '#EF4040',
         titleColor: '#FFFFFF',
         titleSize: '16px',
@@ -85,15 +86,12 @@ getImgs(searchText.value)
         theme: 'dark',
         position: 'topRight',  
         }); 
-    loader.remove();
+        loader.classList.remove("loader");
 
 });
 
 
 
-let lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: "alt",
-    captionDelay: 250,
-});
+
 
 })
