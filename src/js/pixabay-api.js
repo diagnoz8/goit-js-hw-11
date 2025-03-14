@@ -1,7 +1,6 @@
 import axios from 'axios';
 // const errorMsg = 'Sorry, there are no images matching your search query. Please try again!';
 // import iziToast from "izitoast";
-// import "izitoast/dist/css/iziToast.min.css";
 // key — твій унікальний ключ доступу до API.
 // q — слово для пошуку. Те, що буде вводити користувач.
 // image_type — тип зображення. Потрібні тільки фотографії, тому постав значення photo.
@@ -18,7 +17,8 @@ const getImgs = userRequest =>{
 }} )
 
 
-.then(res => console.log(res));
+.then(res => res.data.hits)
+
 }
  
  export default getImgs;
