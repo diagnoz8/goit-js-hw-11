@@ -12,6 +12,8 @@ const searchText = document.querySelector('[name=search-text]');
 const gallery = document.querySelector('.gallery');
 
 searchForm.addEventListener('submit', (evt)=>{
+searchForm.insertAdjacentHTML('afterend', '<div class="loader"></div>');
+const loader = document.querySelector('.loader');
  evt.preventDefault();
  gallery.innerHTML ="";
  //                 -- por si no han teclado request --
@@ -58,6 +60,7 @@ return
 }
 
 console.log(hits);
+loader.remove();
 render(hits);
 lightbox.refresh();
 })
