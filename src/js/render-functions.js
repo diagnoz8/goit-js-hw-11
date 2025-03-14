@@ -12,10 +12,10 @@ const imgCollection = [];
              alt="${tags}"
            />
            <ul class="desc">
-               <li class="descel">likes: ${likes}</li>
-               <li class="descel">views: ${views}</li>
-               <li class="descel">comments: ${comments}</li>
-               <li class="descel">downloads: ${downloads}</li>
+               <li class="descel"><span class="bold">Likes:</span> ${likes}</li>
+               <li class="descel"><span class="bold">Views:</span> ${views}</li>
+               <li class="descel"><span class="bold">Comments:</span> ${comments}</li>
+               <li class="descel"><span class="bold">Downloads:</span> ${downloads}</li>
              </ul>
          </a>
        </li>`);

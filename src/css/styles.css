@@ -7,4 +7,71 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
+.gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1176px;
+  gap: 24px;
+}
+.gallery-item{
+ 
+  max-width: 360px;
+  position: relative;
+}
+.gallery-link{
+  height: 200px;
+}
+.gallery-image{
+object-fit: cover;
+position: relative;
+height: 200px;
+width: 360px;
+z-index: 1;
+}
+.desc{
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  padding: 4px 24px 4px 24px;
+  width: 312px;
+  height: 40px;
+  background-color: white;
+  bottom: 0; left: 0;
 
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 4%;
+  gap: 24px;
+  color: #2E2F42;
+}
+.bold{
+  font-weight: 600;
+  line-height: 16px;
+}
+.descel{
+width: fit-content;
+height: 40px;
+}
+.form{
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+.form > button {
+  height: 40px;
+  background-color: #4E75FF;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+  border-style: none;
+}
+.form > button:hover {
+      background: #6C8CFF;
+    }

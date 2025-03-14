@@ -1,11 +1,4 @@
 import axios from 'axios';
-// const errorMsg = 'Sorry, there are no images matching your search query. Please try again!';
-// import iziToast from "izitoast";
-// key — твій унікальний ключ доступу до API.
-// q — слово для пошуку. Те, що буде вводити користувач.
-// image_type — тип зображення. Потрібні тільки фотографії, тому постав значення photo.
-// orientation — орієнтація фотографії. Постав значення horizontal.
-// safesearch — фільтр за віком. Постав значення true.
 
 const getImgs = userRequest =>{
  return axios.get('https://pixabay.com/api/',{params:{
