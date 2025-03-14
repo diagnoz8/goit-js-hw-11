@@ -64,12 +64,24 @@ getImgs(searchText.value)
 return
 }
 
-console.log(hits);
 render(hits);
 lightbox.refresh();
 })
 
-.catch(error => {console.log(error); loader.remove();})
+.catch(error => { iziToast.show({
+    title: '😢',
+    message: error,
+    color: '#EF4040',
+    titleColor: '#FFFFFF',
+    titleSize: '16px',
+    titleLineHeight: '24px',
+    messageColor: '#FFFFFF',
+    messageSize: '16px',
+    messageLineHeight: '24px',
+    iconUrl: errorIcon,
+    iconColor: '#FFFFFF',
+    theme: 'dark',
+    position: 'topRight',  }); loader.remove();
 
 });
 
