@@ -15,7 +15,6 @@ searchForm.addEventListener('submit', (evt)=>{
     evt.preventDefault();
  gallery.innerHTML =""; 
 
-searchForm.insertAdjacentHTML('afterend', '<div class="loader"></div>');
 const loader = document.querySelector('.loader');
  
  //                 -- por si no han teclado request --
