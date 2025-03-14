@@ -1,7 +1,9 @@
 const gallery = document.querySelector('.gallery');
-const imgCollection = [];
 
  const render = hits =>{
+  gallery.innerHTML = "";
+  const imgCollection = [];
+
     hits.forEach(image => {
         const {webformatURL, largeImageURL, tags, likes, views, comments, downloads} = image;
         return  imgCollection.push( `<li class="gallery-item">

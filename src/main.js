@@ -12,12 +12,15 @@ const searchText = document.querySelector('[name=search-text]');
 const gallery = document.querySelector('.gallery');
 
 searchForm.addEventListener('submit', (evt)=>{
+    evt.preventDefault();
+ gallery.innerHTML =""; 
+
 searchForm.insertAdjacentHTML('afterend', '<div class="loader"></div>');
 const loader = document.querySelector('.loader');
- evt.preventDefault();
- gallery.innerHTML ="";
+ 
  //                 -- por si no han teclado request --
  if (searchText.value.trim().length === 0) {
+    loader.remove();
     iziToast.show({
         title: 'Error',
         message: 'Please enter your request',
@@ -40,6 +43,8 @@ return
 getImgs(searchText.value)
 
 .then(hits => { 
+    loader.remove();
+
     if (hits.length === 0) {
           iziToast.show({
         title: '😢',
@@ -60,14 +65,13 @@ return
 }
 
 console.log(hits);
-loader.remove();
 render(hits);
 lightbox.refresh();
 })
 
-.catch(error => {console.log(error)})
+.catch(error => {console.log(error); loader.remove();})
 
-})
+});
 
 
 
